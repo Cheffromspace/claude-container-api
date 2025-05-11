@@ -1,0 +1,16 @@
+{
+  "action": "created",
+  "comment": {
+    "body": "@MCPClaude What is the purpose of the authentication function in this repo?"
+  },
+  "issue": {
+    "number": 123
+  },
+  "repository": {
+    "full_name": "test-org/test-repo",
+    "name": "test-repo",
+    "owner": {
+      "login": "test-org"
+    }
+  }
+}
