@@ -34,7 +34,11 @@ A webhook endpoint for Claude to perform Git and GitHub actions. This microservi
 
 3. **Configure Credentials**
 
-   Edit the `.env` file with your credentials:
+   Copy the `.env.example` file to `.env` and edit with your credentials:
+   ```
+   cp .env.example .env
+   nano .env  # or use your preferred editor
+   ```
 
    **a. GitHub Webhook Secret**
    - Generate a secure random string to use as your webhook secret
@@ -58,8 +62,8 @@ A webhook endpoint for Claude to perform Git and GitHub actions. This microservi
    - Copy the generated token to your `.env` file as `GITHUB_TOKEN`
 
    **c. AWS Credentials (for Claude via Bedrock)**
-   - Since you're using AWS Bedrock to access Claude, you need AWS credentials
-   - Set these in your `.env` file:
+   - You need AWS Bedrock credentials to access Claude
+   - Update the following values in your `.env` file:
      ```
      AWS_ACCESS_KEY_ID=your_aws_access_key
      AWS_SECRET_ACCESS_KEY=your_aws_secret_key
@@ -69,9 +73,10 @@ A webhook endpoint for Claude to perform Git and GitHub actions. This microservi
      ```
    - Note: You don't need a Claude/Anthropic API key when using Bedrock
 
-   **d. Server Port (optional)**
+   **d. Server Port and Other Settings**
    - By default, the server runs on port 3000
    - To use a different port, set the `PORT` environment variable in your `.env` file
+   - Review other settings in the `.env` file for customization options
 
 4. **Start the server**
    ```

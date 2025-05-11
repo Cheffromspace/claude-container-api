@@ -26,15 +26,15 @@ COPY . .
 # Expose the port
 EXPOSE 3000
 
-# Set environment variables (these should be overridden at runtime)
+# Set default environment variables (these should be overridden at runtime)
 ENV NODE_ENV=production \
     PORT=3000 \
-    # AWS Bedrock credentials for Claude Code
-    AWS_ACCESS_KEY_ID=AKIA2FZ2QRU6LZNXXUI2 \
-    AWS_SECRET_ACCESS_KEY=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 \
-    AWS_REGION=us-east-2 \
-    CLAUDE_CODE_USE_BEDROCK=1 \
-    ANTHROPIC_MODEL=us.anthropic.claude-3-7-sonnet-20250219-v1:0
+    # AWS Bedrock credentials for Claude Code will be passed from .env file
+    AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} \
+    AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} \
+    AWS_REGION=${AWS_REGION} \
+    CLAUDE_CODE_USE_BEDROCK=${CLAUDE_CODE_USE_BEDROCK} \
+    ANTHROPIC_MODEL=${ANTHROPIC_MODEL}
 
 # Run the application
 CMD ["node", "src/index.js"]
